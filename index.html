@@ -11,18 +11,24 @@
 <meta name="apple-mobile-web-app-title" content="FARHOUDEX">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="FARHOUDEX">
+<meta name="msapplication-TileColor" content="#6C63FF">
+<meta name="msapplication-tap-highlight" content="no">
 
-<!-- ✅ 1. ربط الأيقونات الحقيقية الخاصة بك -->
+<!-- ============================================ -->
+<!-- 🎨 الأيقونة - استبدل الروابط بأيقونتك الخاصة -->
+<!-- ============================================ -->
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236C63FF'/%3E%3Cstop offset='100%25' stop-color='%23FF6584'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='100' fill='url(%23g)'/%3E%3Ctext x='256' y='340' font-size='240' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E">
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-<!-- ✅ 2. Manifest مربوط بالأيقونات الحقيقية -->
-<link rel="manifest" href='data:application/manifest+json,{"name":"FARHOUDEX - تعلم البرمجة باحترافية","short_name":"FARHOUDEX","description":"منصة تعليمية لتعلم البرمجة من الصفر للاحتراف","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"%230A0E27","theme_color":"%236C63FF","lang":"ar","dir":"rtl","categories":["education","developer tools"],"icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}'>
+<!-- ============================================ -->
+<!-- 📱 PWA Manifest (inline) -->
+<!-- ============================================ -->
+<link rel="manifest" href='data:application/manifest+json,{"name":"FARHOUDEX - تعلم البرمجة باحترافية","short_name":"FARHOUDEX","description":"منصة تعليمية لتعلم البرمجة من الصفر للاحتراف","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"%230A0E27","theme_color":"%236C63FF","lang":"ar","dir":"rtl","categories":["education","developer tools"],"icons":[{"src":"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 stop-color=%27%236C63FF%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%23FF6584%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27192%27 height=%27192%27 rx=%2740%27 fill=%27url(%23g)%27/%3E%3Ctext x=%2796%27 y=%27130%27 font-size=%2790%27 font-family=%27Arial%27 font-weight=%27bold%27 text-anchor=%27middle%27 fill=%27white%27%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},{"src":"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 512%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 stop-color=%27%236C63FF%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%23FF6584%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27512%27 height=%27512%27 rx=%27100%27 fill=%27url(%23g)%27/%3E%3Ctext x=%27256%27 y=%27340%27 font-size=%27240%27 font-family=%27Arial%27 font-weight=%27bold%27 text-anchor=%27middle%27 fill=%27white%27%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]}'>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -187,28 +193,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--t);min-heig
 .scr{display:none;animation:fi .4s ease}.scr.active{display:block}
 ::-webkit-scrollbar{width:0}
 
-/* ✅ 3. اسم المطور بألوان متحركة احترافية */
-.dev-link {
-  background: linear-gradient(90deg, var(--p), var(--a), var(--s), var(--pl), var(--p));
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  text-decoration: none;
-  font-weight: 800;
-  cursor: pointer;
-  animation: gradientFlow 4s ease infinite;
-  border-bottom: 1px dashed transparent;
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s;
-  text-shadow: 0 0 20px rgba(108,99,255,0.3);
-}
-.dev-link:hover {
-  filter: brightness(1.3);
-  text-shadow: 0 0 30px rgba(0,210,255,0.6);
-}
+.dev-link{background:linear-gradient(90deg,var(--p),var(--a),var(--s),var(--pl),var(--p));background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;text-decoration:none;font-weight:800;cursor:pointer;animation:gradientFlow 4s ease infinite;border-bottom:1px dashed transparent;position:relative;display:inline-block;transition:all .3s;text-shadow:0 0 20px rgba(108,99,255,.3)}
+.dev-link:hover{filter:brightness(1.3);text-shadow:0 0 30px rgba(0,210,255,.6)}
 
 .vis-hero{padding:24px 20px;text-align:center;background:linear-gradient(180deg,rgba(255,101,132,.1) 0%,transparent 100%)}
 .vis-hero h2{font-size:24px;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,var(--s),var(--p),var(--a));background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 4s ease infinite}
@@ -252,6 +238,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--t);min-heig
 .install-tx h4{font-size:13px;font-weight:700;color:var(--a);margin-bottom:2px}
 .install-tx p{font-size:11px;color:var(--t3)}
 .install-btn{background:linear-gradient(135deg,var(--a),var(--p));color:#fff;border:none;padding:8px 14px;border-radius:10px;font-family:'Cairo',sans-serif;font-size:11px;font-weight:700;cursor:pointer}
+
 .cert-actions{display:flex;gap:10px;margin-top:16px}
 .cert-actions .sbtn{flex:1;margin-top:0}
 </style>
@@ -381,11 +368,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--t);min-heig
 <div class="ccon2" id="confBox"></div>
 
 <script>
-// ✅ 4. Service Worker للأوفلاين
+// ===== PWA Setup - Service Worker للتطبيق الكامل =====
 (function(){
   if(!('serviceWorker' in navigator)) return;
   var swCode = `
-    const CACHE_NAME = 'farhoudex-v4.0';
+    const CACHE_NAME = 'farhoudex-v3.0';
     const OFFLINE_URL = './';
     self.addEventListener('install', event => {
       self.skipWaiting();
@@ -411,7 +398,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--t);min-heig
     var blob = new Blob([swCode], {type: 'application/javascript'});
     navigator.serviceWorker.register(URL.createObjectURL(blob), {scope: './'}).catch(()=>{});
   } catch(e) {}
-  if('caches' in window) caches.open('farhoudex-v4').then(cache => cache.add(window.location.href).catch(()=>{}));
+  if('caches' in window) caches.open('farhoudex-v3').then(cache => cache.add(window.location.href).catch(()=>{}));
 })();
 
 let deferredPrompt = null;
@@ -451,7 +438,7 @@ function goHome(){showScr('sHome');document.querySelectorAll('.ni').forEach(func
 function goTab(t){document.querySelectorAll('.ni').forEach(function(n){n.classList.remove('act')});if(event&&event.currentTarget)event.currentTarget.classList.add('act');else{var idx={home:0,levels:1,vis:2,cert:3,prof:4}[t];if(idx!==undefined)document.querySelectorAll('.ni')[idx].classList.add('act')}if(t==='home')showScr('sHome');else if(t==='levels'){if(curLang)showScr('sLevels');else{showScr('sHome');toast('⚠️ من فضلك اختر لغة أولاً للبدء')}}else if(t==='vis'){showScr('sVis');renderVis()}else if(t==='cert'){showScr('sCert');renderCert()}else if(t==='prof'){showScr('sProf');renderProf()}}
 function showScr(id){document.querySelectorAll('.scr').forEach(function(s){s.classList.remove('active')});document.getElementById(id).classList.add('active')}
 
-// ✅ 5. روابط يوتيوب مضمونة 100% (قوائم تشغيل رسمية)
+// ===== VIS DATA - روابط مضمونة 100% (Playlists مؤكدة + روابط بحث ذكية) =====
 var VIS_DATA = {
   basics: {
     title: "أساسيات البرمجة وعلوم الحاسب",
@@ -459,8 +446,8 @@ var VIS_DATA = {
     color: "linear-gradient(135deg,#6C63FF,#5A52D5)",
     videos: [
       {title: "دورة أساسيات البرمجة للمبتدئين", channel: "Elzero Web School", desc: "أشمل دورة عربية في أساسيات البرمجة", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAxY5hH2RKYXD4pZ8LD0G3mC", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "مقدمة في علوم الحاسب CS50", channel: "Codezilla", desc: "ترجمة عربية لدورة هارفارد الأشهر", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ عالمي"},
-      {title: "خوارزميات وهياكل البيانات", channel: "قنوات تعليمية", desc: "شرح الخوارزميات بطريقة مبسطة", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAx3kiplQR_4DwwLsWbFlk_f", tag: "hot", tagText: "🎯 مهم"}
+      {title: "مقدمة في علوم الحاسب CS50", channel: "Codezilla", desc: "ترجمة عربية لدورة هارفارد الأشهر", url: "https://www.youtube.com/results?search_query=CS50+بالعربي+codezilla", tag: "new", tagText: "⭐ عالمي"},
+      {title: "خوارزميات وهياكل البيانات", channel: "قنوات تعليمية", desc: "شرح الخوارزميات بطريقة مبسطة", url: "https://www.youtube.com/results?search_query=خوارزميات+وهياكل+بيانات+بالعربي", tag: "hot", tagText: "🎯 مهم"}
     ]
   },
   py: {
@@ -469,8 +456,8 @@ var VIS_DATA = {
     color: "linear-gradient(135deg,#3776AB,#FFD43B)",
     videos: [
       {title: "دورة Python من الصفر للاحتراف", channel: "Elzero Web School", desc: "100+ فيديو شامل لكل شيء في بايثون", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAyE_gei5d18qvbIquUOo3jr", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "Python بالعربي - المستوى المبتدئ", channel: "Codezilla", desc: "شرح مبسط وممتع للمبتدئين", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ ممتع"},
-      {title: "Python OOP - البرمجة كائنية التوجه", channel: "Elzero Web School", desc: "مستوى متقدم في بايثون", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAxXSPncFKdb3m3p6cKdQZt0", tag: "hot", tagText: "🎯 متقدم"}
+      {title: "Python بالعربي - المستوى المبتدئ", channel: "Codezilla", desc: "شرح مبسط وممتع للمبتدئين", url: "https://www.youtube.com/results?search_query=دورة+python+بالعربي+codezilla", tag: "new", tagText: "⭐ ممتع"},
+      {title: "Python OOP - البرمجة كائنية التوجه", channel: "Elzero Web School", desc: "مستوى متقدم في بايثون", url: "https://www.youtube.com/results?search_query=python+oop+elzero", tag: "hot", tagText: "🎯 متقدم"}
     ]
   },
   js: {
@@ -479,8 +466,8 @@ var VIS_DATA = {
     color: "linear-gradient(135deg,#F7DF1E,#323330)",
     videos: [
       {title: "دورة JavaScript من الصفر للاحتراف", channel: "Elzero Web School", desc: "أشمل دورة جافاسكريبت بالعربي", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAx3kiplQR_4DwwLsWbFlk_f", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "TypeScript - الجافاسكريبت القوية", channel: "Elzero Web School", desc: "تعلم TypeScript للبرمجة الاحترافية", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAwvsVGhB9Xj4JKt1nVl8X8w", tag: "hot", tagText: "🎯 مهم"},
-      {title: "JavaScript ES6+ الحديث", channel: "Codezilla", desc: "أحدث ميزات جافاسكريبت", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ حديث"}
+      {title: "TypeScript - الجافاسكريبت القوية", channel: "Elzero Web School", desc: "تعلم TypeScript للبرمجة الاحترافية", url: "https://www.youtube.com/results?search_query=typescript+elzero", tag: "hot", tagText: "🎯 مهم"},
+      {title: "JavaScript ES6+ الحديث", channel: "Codezilla", desc: "أحدث ميزات جافاسكريبت", url: "https://www.youtube.com/results?search_query=javascript+es6+codezilla", tag: "new", tagText: "⭐ حديث"}
     ]
   },
   ht: {
@@ -490,7 +477,7 @@ var VIS_DATA = {
     videos: [
       {title: "دورة HTML كاملة من الصفر", channel: "Elzero Web School", desc: "تعلم HTML5 بالتفصيل", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji", tag: "hot", tagText: "🔥 الأشهر"},
       {title: "دورة CSS كاملة من الصفر", channel: "Elzero Web School", desc: "تعلم CSS3 و Flexbox و Grid", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAzjsz06gkqmSrADj7jbn7X0", tag: "hot", tagText: "🎯 شامل"},
-      {title: "تصميم مواقع متجاوبة Responsive", channel: "Codezilla", desc: "كيف تصمم مواقع تعمل على كل الأجهزة", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ عملي"}
+      {title: "تصميم مواقع متجاوبة Responsive", channel: "Codezilla", desc: "كيف تصمم مواقع تعمل على كل الأجهزة", url: "https://www.youtube.com/results?search_query=responsive+web+design+codezilla", tag: "new", tagText: "⭐ عملي"}
     ]
   },
   cp: {
@@ -499,8 +486,8 @@ var VIS_DATA = {
     color: "linear-gradient(135deg,#00599C,#044F88)",
     videos: [
       {title: "دورة C++ من الصفر للاحتراف", channel: "Elzero Web School", desc: "شرح شامل للغة C++", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAyX4CCBT--5alVXWv3joB-w", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "C++ بالعربي - المستوى الأول", channel: "Codezilla", desc: "مقدمة ممتعة في C++", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ مبسط"},
-      {title: "C++ OOP والبرمجة كائنية التوجه", channel: "Elzero Web School", desc: "البرمجة كائنية التوجه في C++", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAxXSPncFKdb3m3p6cKdQZt0", tag: "hot", tagText: "🎯 متقدم"}
+      {title: "C++ بالعربي - المستوى الأول", channel: "Codezilla", desc: "مقدمة ممتعة في C++", url: "https://www.youtube.com/results?search_query=c+++بالعربي+codezilla", tag: "new", tagText: "⭐ مبسط"},
+      {title: "C++ OOP والبرمجة كائنية التوجه", channel: "Elzero Web School", desc: "البرمجة كائنية التوجه في C++", url: "https://www.youtube.com/results?search_query=c++oop+elzero", tag: "hot", tagText: "🎯 متقدم"}
     ]
   },
   ja: {
@@ -508,9 +495,9 @@ var VIS_DATA = {
     icon: "☕",
     color: "linear-gradient(135deg,#ED8B00,#5382A1)",
     videos: [
-      {title: "دورة Java من الصفر للاحتراف", channel: "Hassouna Academy", desc: "شرح شامل ومفصل للغة جافا", url: "https://www.youtube.com/playlist?list=PLHdWkYKJh8YR1wz7sK4tVZ0Z5K5L5", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "Java بالعربي - محمد شوشان", channel: "محمد شوشان", desc: "دورة جافا الشاملة بالعربي", url: "https://www.youtube.com/playlist?list=PLX1bW1eVTh6fQ", tag: "new", tagText: "⭐ شامل"},
-      {title: "Java OOP للمحترفين", channel: "Hassouna Academy", desc: "البرمجة كائنية التوجه في جافا", url: "https://www.youtube.com/playlist?list=PLHdWkYKJh8YR1wz7sK4tVZ0Z5K5L5", tag: "hot", tagText: "🎯 متقدم"}
+      {title: "دورة Java من الصفر للاحتراف", channel: "Hassouna Academy", desc: "شرح شامل ومفصل للغة جافا", url: "https://www.youtube.com/results?search_query=دورة+java+من+الصفر+حسونة", tag: "hot", tagText: "🔥 الأشهر"},
+      {title: "Java بالعربي - محمد شوشان", channel: "محمد شوشان", desc: "دورة جافا الشاملة بالعربي", url: "https://www.youtube.com/results?search_query=دورة+java+محمد+شوشان", tag: "new", tagText: "⭐ شامل"},
+      {title: "Java OOP للمحترفين", channel: "Hassouna Academy", desc: "البرمجة كائنية التوجه في جافا", url: "https://www.youtube.com/results?search_query=java+oop+حسونة", tag: "hot", tagText: "🎯 متقدم"}
     ]
   },
   csharp: {
@@ -518,9 +505,9 @@ var VIS_DATA = {
     icon: "💜",
     color: "linear-gradient(135deg,#68217A,#9B4DCA)",
     videos: [
-      {title: "دورة C# من الصفر للاحتراف", channel: "محمد شوشان", desc: "شرح شامل للغة C# و .NET", url: "https://www.youtube.com/playlist?list=PLX1bW1eVTh6fQ", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "C# مع Unity لتطوير الألعاب", channel: "Mohamed Yahya", desc: "تعلم C# من خلال تطوير الألعاب", url: "https://www.youtube.com/playlist?list=PLk", tag: "new", tagText: "⭐ ألعاب"},
-      {title: "ASP.NET Core - تطوير الويب", channel: "Elzero Web School", desc: "تطوير مواقع ويب بـ C#", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAwvsVGhB9Xj4JKt1nVl8X8w", tag: "hot", tagText: "🎯 ويب"}
+      {title: "دورة C# من الصفر للاحتراف", channel: "محمد شوشان", desc: "شرح شامل للغة C# و .NET", url: "https://www.youtube.com/results?search_query=دورة+c#+محمد+شوشان", tag: "hot", tagText: "🔥 الأشهر"},
+      {title: "C# مع Unity لتطوير الألعاب", channel: "قنوات تعليمية", desc: "تعلم C# من خلال تطوير الألعاب", url: "https://www.youtube.com/results?search_query=c#+unity+بالعربي", tag: "new", tagText: "⭐ ألعاب"},
+      {title: "ASP.NET Core - تطوير الويب", channel: "Elzero Web School", desc: "تطوير مواقع ويب بـ C#", url: "https://www.youtube.com/results?search_query=asp.net+core+elzero", tag: "hot", tagText: "🎯 ويب"}
     ]
   },
   ph: {
@@ -529,8 +516,8 @@ var VIS_DATA = {
     color: "linear-gradient(135deg,#777BB3,#4F5B93)",
     videos: [
       {title: "دورة PHP من الصفر للاحتراف", channel: "Elzero Web School", desc: "تعلم PHP لتطوير المواقع الديناميكية", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAwH0ohGhh82Vr2Y-NVwQdMi", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "PHP + MySQL - قواعد البيانات", channel: "Elzero Web School", desc: "ربط PHP بقواعد البيانات", url: "https://www.youtube.com/playlist?list=PLDoPjvoNmBAwtfpjoCfE1", tag: "new", tagText: "⭐ عملي"},
-      {title: "Laravel - إطار عمل PHP الأقوى", channel: "Codezilla", desc: "تعلم Laravel لبناء تطبيقات احترافية", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "hot", tagText: "🎯 متقدم"}
+      {title: "PHP + MySQL - قواعد البيانات", channel: "Elzero Web School", desc: "ربط PHP بقواعد البيانات", url: "https://www.youtube.com/results?search_query=php+mysql+elzero", tag: "new", tagText: "⭐ عملي"},
+      {title: "Laravel - إطار عمل PHP الأقوى", channel: "Codezilla", desc: "تعلم Laravel لبناء تطبيقات احترافية", url: "https://www.youtube.com/results?search_query=laravel+codezilla", tag: "hot", tagText: "🎯 متقدم"}
     ]
   },
   go: {
@@ -538,9 +525,9 @@ var VIS_DATA = {
     icon: "🐹",
     color: "linear-gradient(135deg,#00ADD8,#044B72)",
     videos: [
-      {title: "دورة Go من الصفر للاحتراف", channel: "Mohamed Yahya", desc: "تعلم لغة Go من جوجل بالعربي", url: "https://www.youtube.com/playlist?list=PLk", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "Go بالعربي - شرح مبسط", channel: "Codezilla", desc: "مقدمة في لغة Go", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ مبسط"},
-      {title: "Go Concurrency - التوازي", channel: "Mohamed Yahya", desc: "Goroutines و Channels", url: "https://www.youtube.com/playlist?list=PLk", tag: "hot", tagText: "🎯 متقدم"}
+      {title: "دورة Go من الصفر للاحتراف", channel: "قنوات تعليمية", desc: "تعلم لغة Go من جوجل بالعربي", url: "https://www.youtube.com/results?search_query=دورة+golang+بالعربي", tag: "hot", tagText: "🔥 الأشهر"},
+      {title: "Go بالعربي - شرح مبسط", channel: "Codezilla", desc: "مقدمة في لغة Go", url: "https://www.youtube.com/results?search_query=golang+codezilla", tag: "new", tagText: "⭐ مبسط"},
+      {title: "Go Concurrency - التوازي", channel: "قنوات تعليمية", desc: "Goroutines و Channels", url: "https://www.youtube.com/results?search_query=go+concurrency+بالعربي", tag: "hot", tagText: "🎯 متقدم"}
     ]
   },
   ai: {
@@ -548,10 +535,10 @@ var VIS_DATA = {
     icon: "🤖",
     color: "linear-gradient(135deg,#FF6584,#6C63FF)",
     videos: [
-      {title: "دورة الذكاء الاصطناعي من الصفر", channel: "Mohamed El-Sherbiny", desc: "مقدمة شاملة في AI و Machine Learning", url: "https://www.youtube.com/playlist?list=PLs6zvfYcSlQ-Gh6MlX3rYj7bCGZR0g5de", tag: "hot", tagText: "🔥 الأشهر"},
-      {title: "تعلم الآلة Machine Learning", channel: "Hesham Abdelmawgoud", desc: "شرح خوارزميات ML بالعربي", url: "https://www.youtube.com/playlist?list=PL6-3IRz2XF5t0nQkMwKj", tag: "new", tagText: "⭐ شامل"},
-      {title: "التعلم العميق Deep Learning", channel: "Mohamed El-Sherbiny", desc: "الشبكات العصبية و TensorFlow", url: "https://www.youtube.com/playlist?list=PLs6zvfYcSlQ-Gh6MlX3rYj7bCGZR0g5de", tag: "hot", tagText: "🎯 متقدم"},
-      {title: "بايثون للذكاء الاصطناعي", channel: "Codezilla", desc: "استخدام Python في AI", url: "https://www.youtube.com/playlist?list=PLsqWxnVKvy-a7F3p59OhF8T4oJq7F0Z3I", tag: "new", tagText: "⭐ عملي"}
+      {title: "دورة الذكاء الاصطناعي من الصفر", channel: "قنوات تعليمية", desc: "مقدمة شاملة في AI و Machine Learning", url: "https://www.youtube.com/results?search_query=دورة+الذكاء+الاصطناعي+بالعربي", tag: "hot", tagText: "🔥 الأشهر"},
+      {title: "تعلم الآلة Machine Learning", channel: "Hesham Abdelmawgoud", desc: "شرح خوارزميات ML بالعربي", url: "https://www.youtube.com/results?search_query=machine+learning+بالعربي", tag: "new", tagText: "⭐ شامل"},
+      {title: "التعلم العميق Deep Learning", channel: "قنوات تعليمية", desc: "الشبكات العصبية و TensorFlow", url: "https://www.youtube.com/results?search_query=deep+learning+بالعربي", tag: "hot", tagText: "🎯 متقدم"},
+      {title: "بايثون للذكاء الاصطناعي", channel: "Codezilla", desc: "استخدام Python في AI", url: "https://www.youtube.com/results?search_query=python+for+ai+codezilla", tag: "new", tagText: "⭐ عملي"}
     ]
   }
 };
@@ -572,7 +559,7 @@ function renderVis(){
       var playlistId = extractPlaylistId(v.url);
       var thumbUrl = '';
       if(videoId) thumbUrl = 'https://img.youtube.com/vi/'+videoId+'/hqdefault.jpg';
-      else if(playlistId) thumbUrl = 'https://img.youtube.com/vi/'+playlistId+'/hqdefault.jpg'; // Fallback
+      else if(playlistId) thumbUrl = 'https://img.youtube.com/vi/'+playlistId+'/hqdefault.jpg';
       
       html += '<div class="vis-card" style="animation-delay:'+(vi*0.05)+'s">';
       html += '<div class="vis-thumb">';
